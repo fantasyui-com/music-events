@@ -1,6 +1,6 @@
 const EventEmitter = require('events');
 
-module.exports = function(options = {bps:1, beats:8, bar:16}){
+module.exports = function(options = {bps:32, beats:64, bar:16}){
 
   class MusicEvents extends EventEmitter {}
   const musicEvents = new MusicEvents();
@@ -10,7 +10,7 @@ module.exports = function(options = {bps:1, beats:8, bar:16}){
 
   musicEvents.on('start', () => {
     intervalId = setInterval(function(){
-    musicEvents.emit('beat', {beat:beatCounter});
+    musicEvents.emit('beat', {count:beatCounter});
     beatCounter++;
     }, 1000 / options.bps)
   });
@@ -25,7 +25,7 @@ module.exports = function(options = {bps:1, beats:8, bar:16}){
   });
 
   musicEvents.on('beat', () => {
-    if(beatCounter % options.bar === 0) musicEvents.emit('bar');
+    if(beatCounter % options.bar === 0) musicEvents.emit('bar', {count:beatCounter/options.bar});
   });
 
   return musicEvents;

@@ -1,8 +1,9 @@
 const package = require('./index.js');
 
-let song = package({ bps: 1, beats:10 });
+let song = package();
 
-song.on('beat', function({beat}){ console.log('beat',beat) });
+song.on('beat', function({count}){ console.log('beat',count) });
+song.on('bar', function({count}){ console.log('bar',count) });
 song.on('start', function(){ console.log('song started') });
 song.on('stop', function(){ console.log('song ended') });
 
