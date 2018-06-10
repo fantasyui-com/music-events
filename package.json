@@ -1,0 +1,20 @@
+{
+  "name": "music-events",
+  "version": "1.0.0",
+  "description": "Describe an abstract song and attach your functions to song's events.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fantasyui-com/music-events.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fantasyui-com/music-events/issues"
+  },
+  "homepage": "https://github.com/fantasyui-com/music-events#readme"
+}
