@@ -1,6 +1,6 @@
 const EventEmitter = require('events');
 
-module.exports = function(options = {bps:32, beats:64, bar:16}){
+module.exports = function(options = {beats:64, bps:32, bar:16}){
 
   class MusicEvents extends EventEmitter {}
   const musicEvents = new MusicEvents();
